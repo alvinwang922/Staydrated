@@ -247,6 +247,7 @@ class NewApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
             primarySwatch: Colors.cyan, accentColor: Colors.deepPurple),
         home: Scaffold(
