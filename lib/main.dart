@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
-import './product_manager.dart';
 
 void main() => runApp(MyApp());
 
@@ -250,317 +247,325 @@ class NewApp extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme:
-          ThemeData(primarySwatch: Colors.cyan, accentColor: Colors.deepPurple),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Staydrated', style: new TextStyle(
-            fontWeight: FontWeight.bold,
-            fontStyle: FontStyle.italic,
-            fontSize: 35.0,
-            fontFamily: 'Oswald',
-          ),),
-        ),
-        body: SingleChildScrollView(child: new Container(
-          margin: const EdgeInsets.only(left: 15.0, right: 15.0),
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    ' ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                    ),
-                  ),
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Container(
-                      width: 250.0,
-                      height: 250.0,
-                      decoration: new BoxDecoration(
-                        image: DecorationImage(
-                          image: new AssetImage('images/droplet.png'),
-                          fit: BoxFit.fill,
-                        ),
-                      ))
-                ],
-              ),
-              new TextField(
-                decoration: new InputDecoration(
-                  labelText: "Enter your weight(lb.): ",
-                  labelStyle: new TextStyle(
-                    fontSize: 25.0,
-                    fontFamily: 'Roboto',
-                  ),
+        theme: ThemeData(
+            primarySwatch: Colors.cyan, accentColor: Colors.deepPurple),
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text(
+                'Staydrated',
+                style: new TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  fontSize: 35.0,
+                  fontFamily: 'Oswald',
                 ),
-                keyboardType: TextInputType.number,
-                onChanged: (userWeight) {
-                  var weight = double.parse(userWeight);
-                  calculate(weight);
+              ),
+            ),
+            body: SingleChildScrollView(
+              child: new GestureDetector(
+                onTap: () {
+                  FocusScope.of(context).requestFocus(new FocusNode());
                 },
-              ),
-              new TextField(
-                decoration: new InputDecoration(
-                  labelText: "Enter your age: ",
-                  labelStyle: new TextStyle(
-                    fontSize: 25.0,
-                    fontFamily: 'Roboto',
-                  ),
-                ),
-                keyboardType: TextInputType.number,
-                onChanged: (userAge) {
-                  var age = double.parse(userAge);
-                  check(age);
-                },
-              ),
-              new Text(
-                'Current water intake: $number cups.',
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 27.0,
-                  fontFamily: 'Oswald',
-                ),
-              ),
-              new Text(
-                'Recommended water intake: $recommended cups.',
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 27.0,
-                  fontFamily: 'Oswald',
-                ),
-              ),
-              new Text(
-                message,
-                textAlign: TextAlign.center,
-                style: new TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 27.0,
-                  fontFamily: 'Oswald',
-                ),
-              ),
-              new Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    new Text(
-                      'One cup of ',
-                      style: new TextStyle(
-                        fontSize: 20.0,
-                        fontFamily: 'Roboto',
+                child: new Container(
+                  margin: const EdgeInsets.only(left: 15.0, right: 15.0),
+                  child: new Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            ' ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    new RaisedButton(
-                      padding: const EdgeInsets.all(8.0),
-                      textColor: Colors.black,
-                      color: Colors.blue,
-                      onPressed: addWater,
-                      child: new Text("Water"),
-                    ),
-                    new RaisedButton(
-                      padding: const EdgeInsets.all(8.0),
-                      textColor: Colors.black,
-                      color: Colors.blue,
-                      onPressed: subtractWater,
-                      child: new Text("Undo"),
-                    ),
-                  ]),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'One cup of ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Container(
+                              width: 250.0,
+                              height: 250.0,
+                              decoration: new BoxDecoration(
+                                image: DecorationImage(
+                                  image: new AssetImage('images/droplet.png'),
+                                  fit: BoxFit.fill,
+                                ),
+                              ))
+                        ],
+                      ),
+                      new TextField(
+                        decoration: new InputDecoration(
+                          labelText: "Enter your weight(lb.): ",
+                          labelStyle: new TextStyle(
+                            fontSize: 25.0,
+                            fontFamily: 'Roboto',
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        onChanged: (userWeight) {
+                          var weight = double.parse(userWeight);
+                          calculate(weight);
+                        },
+                      ),
+                      new TextField(
+                        decoration: new InputDecoration(
+                          labelText: "Enter your age: ",
+                          labelStyle: new TextStyle(
+                            fontSize: 23.0,
+                            fontFamily: 'Roboto',
+                          ),
+                        ),
+                        keyboardType: TextInputType.number,
+                        onChanged: (userAge) {
+                          var age = double.parse(userAge);
+                          check(age);
+                        },
+                      ),
+                      new Text(
+                        'Current water intake: $number cups.',
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23.0,
+                          fontFamily: 'Oswald',
+                        ),
+                      ),
+                      new Text(
+                        'Recommended water intake: $recommended cups.',
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23.0,
+                          fontFamily: 'Oswald',
+                        ),
+                      ),
+                      new Text(
+                        message,
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 25.0,
+                          fontFamily: 'Oswald',
+                        ),
+                      ),
+                      new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            new Text(
+                              'One cup of ',
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                                fontFamily: 'Roboto',
+                              ),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.blue,
+                              onPressed: addWater,
+                              child: new Text("Water"),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.blue,
+                              onPressed: subtractWater,
+                              child: new Text("Undo"),
+                            ),
+                          ]),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One cup of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addJuice,
+                            textColor: Colors.black,
+                            color: Colors.yellow,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Juice",
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: subtractJuice,
+                            textColor: Colors.black,
+                            color: Colors.yellow,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Undo",
+                            ),
+                          ),
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One cup of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addSoda,
+                            textColor: Colors.black,
+                            color: Colors.red,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Soda",
+                            ),
+                          ),
+                          new RaisedButton(
+                            padding: const EdgeInsets.all(8.0),
+                            textColor: Colors.black,
+                            color: Colors.red,
+                            onPressed: subtractSoda,
+                            child: new Text("Undo"),
+                          )
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One cup of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addSoup,
+                            textColor: Colors.black,
+                            color: Colors.purple[300],
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Soup",
+                            ),
+                          ),
+                          new RaisedButton(
+                            padding: const EdgeInsets.all(8.0),
+                            textColor: Colors.black,
+                            color: Colors.purple[300],
+                            onPressed: subtractSoup,
+                            child: new Text("Undo"),
+                          )
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One serving of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addFruit,
+                            textColor: Colors.black,
+                            color: Colors.orange,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Fruits",
+                            ),
+                          ),
+                          new RaisedButton(
+                            padding: const EdgeInsets.all(8.0),
+                            textColor: Colors.black,
+                            color: Colors.orange,
+                            onPressed: subtractFruit,
+                            child: new Text("Undo"),
+                          )
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One serving of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addVegetable,
+                            textColor: Colors.black,
+                            color: Colors.green,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Vegetables",
+                            ),
+                          ),
+                          new RaisedButton(
+                            padding: const EdgeInsets.all(8.0),
+                            textColor: Colors.black,
+                            color: Colors.green,
+                            onPressed: subtractVegetable,
+                            child: new Text("Undo"),
+                          )
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'New day? Good morning! ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: reset,
+                            textColor: Colors.white,
+                            color: Colors.black,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Reset",
+                            ),
+                          ),
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            ' ',
+                            style: new TextStyle(
+                              fontSize: 25.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'Alvin Wang',
+                            style: new TextStyle(
+                              fontSize: 15.0,
+                              fontFamily: 'Pacifico',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
-                  new RaisedButton(
-                    onPressed: addJuice,
-                    textColor: Colors.black,
-                    color: Colors.yellow,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Juice",
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: subtractJuice,
-                    textColor: Colors.black,
-                    color: Colors.yellow,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Undo",
-                    ),
-                  ),
-                ],
+                ),
               ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'One cup of ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: addSoda,
-                    textColor: Colors.black,
-                    color: Colors.red,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Soda",
-                    ),
-                  ),
-                  new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.black,
-                    color: Colors.red,
-                    onPressed: subtractSoda,
-                    child: new Text("Undo"),
-                  )
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'One cup of ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: addSoup,
-                    textColor: Colors.black,
-                    color: Colors.purple[300],
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Soup",
-                    ),
-                  ),
-                  new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.black,
-                    color: Colors.purple[300],
-                    onPressed: subtractSoup,
-                    child: new Text("Undo"),
-                  )
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'One serving of ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: addFruit,
-                    textColor: Colors.black,
-                    color: Colors.orange,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Fruits",
-                    ),
-                  ),
-                  new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.black,
-                    color: Colors.orange,
-                    onPressed: subtractFruit,
-                    child: new Text("Undo"),
-                  )
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'One serving of ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: addVegetable,
-                    textColor: Colors.black,
-                    color: Colors.green,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Vegetables",
-                    ),
-                  ),
-                  new RaisedButton(
-                    padding: const EdgeInsets.all(8.0),
-                    textColor: Colors.black,
-                    color: Colors.green,
-                    onPressed: subtractVegetable,
-                    child: new Text("Undo"),
-                  )
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'New day? Good morning! ',
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Roboto',
-                    ),
-                  ),
-                  new RaisedButton(
-                    onPressed: reset,
-                    textColor: Colors.white,
-                    color: Colors.black,
-                    padding: const EdgeInsets.all(8.0),
-                    child: new Text(
-                      "Reset",
-                    ),
-                  ),
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    ' ',
-                    style: new TextStyle(
-                      fontSize: 25.0,
-                    ),
-                  ),
-                ],
-              ),
-              new Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  new Text(
-                    'Alvin Wang',
-                    style: new TextStyle(
-                      fontSize: 15.0,
-                      fontFamily: 'Pacifico',
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
-    ));
+            )));
   }
 }
