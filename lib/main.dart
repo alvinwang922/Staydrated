@@ -302,7 +302,6 @@ class NewApp extends State<MyApp> {
                           labelText: "Enter your weight(lb.): ",
                           labelStyle: new TextStyle(
                             fontSize: 25.0,
-                            fontFamily: 'Roboto',
                           ),
                         ),
                         keyboardType: TextInputType.number,
@@ -315,8 +314,7 @@ class NewApp extends State<MyApp> {
                         decoration: new InputDecoration(
                           labelText: "Enter your age: ",
                           labelStyle: new TextStyle(
-                            fontSize: 23.0,
-                            fontFamily: 'Roboto',
+                            fontSize: 25.0,
                           ),
                         ),
                         keyboardType: TextInputType.number,
