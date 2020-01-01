@@ -314,7 +314,7 @@ class NewApp extends State<MyApp> {
                         decoration: new InputDecoration(
                           labelText: "Enter your age: ",
                           labelStyle: new TextStyle(
-                            fontSize: 23.0,
+                            fontSize: 20.0,
                           ),
                         ),
                         keyboardType: TextInputType.number,
@@ -324,11 +324,17 @@ class NewApp extends State<MyApp> {
                         },
                       ),
                       new Text(
+                        ' ',
+                        style: new TextStyle(
+                          fontSize: 20.0,
+                        ),
+                      ),
+                      new Text(
                         'Current water intake: $number cups.',
                         textAlign: TextAlign.center,
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 23.0,
+                          fontSize: 20.0,
                           fontFamily: 'Oswald',
                         ),
                       ),
