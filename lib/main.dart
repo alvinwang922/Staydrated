@@ -326,7 +326,7 @@ class NewApp extends State<MyApp> {
                       new Text(
                         ' ',
                         style: new TextStyle(
-                          fontSize: 15.0,
+                          fontSize: 12.0,
                         ),
                       ),
                       new Text(
@@ -334,7 +334,7 @@ class NewApp extends State<MyApp> {
                         textAlign: TextAlign.center,
                         style: new TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20.0,
+                          fontSize: 23.0,
                           fontFamily: 'Oswald',
                         ),
                       ),
