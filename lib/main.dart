@@ -16,6 +16,16 @@ class NewApp extends State<MyApp> {
   double recommended = 0;
   double missing = 0;
   String message = "";
+  int water = 0,
+      coffee = 0,
+      tea = 0,
+      milk = 0,
+      juice = 0,
+      soda = 0,
+      beer = 0,
+      soup = 0,
+      fruits = 0,
+      vegetables = 0;
 
   void calculate(double weight) {
     setState(() {
@@ -46,6 +56,7 @@ class NewApp extends State<MyApp> {
   void addWater() {
     setState(() {
       number++;
+      water++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -62,6 +73,109 @@ class NewApp extends State<MyApp> {
   void subtractWater() {
     setState(() {
       number--;
+      water--;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void addCoffee() {
+    setState(() {
+      number += 0.99;
+      coffee ++;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void subtractCoffee() {
+    setState(() {
+      number -= 0.99;
+      coffee--;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void addTea() {
+    setState(() {
+      number++;
+      tea++;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void subtractTea() {
+    setState(() {
+      number--;
+      tea--;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void addMilk() {
+    setState(() {
+      number += 0.87;
+      milk++;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void subtractMilk() {
+    setState(() {
+      number -= 0.87;
+      milk--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -78,6 +192,7 @@ class NewApp extends State<MyApp> {
   void addJuice() {
     setState(() {
       number += 0.85;
+      juice++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -94,6 +209,7 @@ class NewApp extends State<MyApp> {
   void subtractJuice() {
     setState(() {
       number -= 0.85;
+      juice--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -110,6 +226,7 @@ class NewApp extends State<MyApp> {
   void addSoda() {
     setState(() {
       number += 0.9;
+      soda++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -126,6 +243,41 @@ class NewApp extends State<MyApp> {
   void subtractSoda() {
     setState(() {
       number -= 0.9;
+      soda--;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void addBeer() {
+    setState(() {
+      number += 0.95;
+      beer++;
+      missing = recommended - number;
+      number = double.parse(number.toStringAsFixed(2));
+      if (missing <= 0) {
+        message = 'Congratulations! You have reached the recommended '
+            'daily water intake of $recommended cups for today!';
+      } else {
+        missing = double.parse(missing.toStringAsFixed(2));
+        message = 'To reach the recommended daily water intake, '
+            'you still need to consume $missing cups of water.';
+      }
+    });
+  }
+
+  void subtractBeer() {
+    setState(() {
+      number -= 0.95;
+      beer--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -142,6 +294,7 @@ class NewApp extends State<MyApp> {
   void addSoup() {
     setState(() {
       number += 0.92;
+      soup++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -158,6 +311,7 @@ class NewApp extends State<MyApp> {
   void subtractSoup() {
     setState(() {
       number -= 0.92;
+      soup--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -174,6 +328,7 @@ class NewApp extends State<MyApp> {
   void addFruit() {
     setState(() {
       number += 0.6;
+      fruits++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -190,6 +345,7 @@ class NewApp extends State<MyApp> {
   void subtractFruit() {
     setState(() {
       number -= 0.6;
+      fruits--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -206,6 +362,7 @@ class NewApp extends State<MyApp> {
   void addVegetable() {
     setState(() {
       number += 0.25;
+      vegetables++;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -222,6 +379,7 @@ class NewApp extends State<MyApp> {
   void subtractVegetable() {
     setState(() {
       number -= 0.25;
+      vegetables--;
       missing = recommended - number;
       number = double.parse(number.toStringAsFixed(2));
       if (missing <= 0) {
@@ -240,6 +398,16 @@ class NewApp extends State<MyApp> {
       number = 0;
       missing = 0;
       recommended = 0;
+      water = 0;
+      coffee = 0;
+      tea = 0;
+      milk = 0;
+      juice = 0;
+      soda = 0;
+      beer = 0;
+      soup = 0;
+      fruits = 0;
+      vegetables = 0;
       message = ' ';
     });
   }
@@ -330,6 +498,15 @@ class NewApp extends State<MyApp> {
                         ),
                       ),
                       new Text(
+                        '(1 cup = 8 oz.)',
+                        textAlign: TextAlign.center,
+                        style: new TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23.0,
+                          fontFamily: 'Oswald',
+                        ),
+                      ),
+                      new Text(
                         'Current water intake: $number cups.',
                         textAlign: TextAlign.center,
                         style: new TextStyle(
@@ -378,6 +555,82 @@ class NewApp extends State<MyApp> {
                               textColor: Colors.black,
                               color: Colors.blue,
                               onPressed: subtractWater,
+                              child: new Text("Undo"),
+                            ),
+                          ]),
+                      new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            new Text(
+                              'One cup of ',
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                                fontFamily: 'Roboto',
+                              ),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.brown[400],
+                              onPressed:
+                                  addCoffee, //coffee is basically 100% water
+                              child: new Text("Coffee"),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.brown[400],
+                              onPressed: subtractCoffee,
+                              child: new Text("Undo"),
+                            ),
+                          ]),
+                      new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            new Text(
+                              'One cup of ',
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                                fontFamily: 'Roboto',
+                              ),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.pink[300],
+                              onPressed: addTea, //tea is basically 100% water
+                              child: new Text("Tea"),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.pink[300],
+                              onPressed: subtractTea,
+                              child: new Text("Tea"),
+                            ),
+                          ]),
+                      new Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            new Text(
+                              'One cup of ',
+                              style: new TextStyle(
+                                fontSize: 20.0,
+                                fontFamily: 'Roboto',
+                              ),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.grey[350],
+                              onPressed: addMilk,
+                              child: new Text("Milk"),
+                            ),
+                            new RaisedButton(
+                              padding: const EdgeInsets.all(8.0),
+                              textColor: Colors.black,
+                              color: Colors.grey[350],
+                              onPressed: subtractMilk,
                               child: new Text("Undo"),
                             ),
                           ]),
@@ -435,6 +688,34 @@ class NewApp extends State<MyApp> {
                             textColor: Colors.black,
                             color: Colors.red,
                             onPressed: subtractSoda,
+                            child: new Text("Undo"),
+                          )
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'One cup of ',
+                            style: new TextStyle(
+                              fontSize: 20.0,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                          new RaisedButton(
+                            onPressed: addBeer,
+                            textColor: Colors.black,
+                            color: Colors.lime,
+                            padding: const EdgeInsets.all(8.0),
+                            child: new Text(
+                              "Beer",
+                            ),
+                          ),
+                          new RaisedButton(
+                            padding: const EdgeInsets.all(8.0),
+                            textColor: Colors.black,
+                            color: Colors.lime,
+                            onPressed: subtractBeer,
                             child: new Text("Undo"),
                           )
                         ],
@@ -550,7 +831,73 @@ class NewApp extends State<MyApp> {
                           new Text(
                             ' ',
                             style: new TextStyle(
-                              fontSize: 25.0,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            'Tracker(in cups/servings):',
+                            textAlign: TextAlign.center,
+                            style: new TextStyle(
+                              fontSize: 18.0,
+                              decoration: TextDecoration.underline,
+                            ),
+                          ),
+                        ],
+                      ),
+                      new Container(
+                          child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Flexible(
+                            child: new Text(
+                              'Water: $water   Coffee: $coffee   Tea: $tea   Milk: $milk',
+                              style: new TextStyle(
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          )
+                        ],
+                      )),
+                      new Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Flexible(
+                                child: new Text(
+                                  'Juice: $juice   Soda: $soda   Beer: $beer   Soup: $soup',
+                                  style: new TextStyle(
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                      new Container(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Flexible(
+                                child: new Text(
+                                      'Fruits: $fruits   Vegetables: $vegetables',
+                                  style: new TextStyle(
+                                    fontSize: 18.0,
+                                  ),
+                                ),
+                              )
+                            ],
+                          )),
+                      new Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          new Text(
+                            ' ',
+                            style: new TextStyle(
+                              fontSize: 15.0,
                             ),
                           ),
                         ],
